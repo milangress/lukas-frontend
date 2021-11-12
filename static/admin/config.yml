@@ -25,7 +25,7 @@ collections:
     files:
       - label: "Site Settings"
         name: "site-settings"
-        file: "site/content/settings.yml"
+        file: "content/settings.yml"
         format: 'frontmatter'
         editor:
           preview: false
