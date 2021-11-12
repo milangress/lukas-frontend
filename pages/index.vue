@@ -1,7 +1,9 @@
 <template>
   <div>
+    <h1>{{settings.title}}</h1>
     <li v-for="link of links" :key="link.slug">
-      <NuxtLink :to="link.slug">{{ link.title }}</NuxtLink>
+      <a :href="link.link">{{ link.title }}</a>
+      <p>{{link.description}}</p>
     </li>
   </div>
 </template>
@@ -10,9 +12,11 @@
 export default {
   async asyncData({ $content }) {
     const links = await $content("links").fetch()
+    const settings = await $content("settings").fetch()
 
     return {
       links,
+      settings
     };
   },
   head() {
